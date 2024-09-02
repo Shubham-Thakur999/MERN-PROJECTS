@@ -1,0 +1,215 @@
+*{
+    text-decoration: none;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 1px 3px -2px black;
+    padding: 12px 50px;
+}
+
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.nav-logo p{
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.nav-menu{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+.nav-menu li{
+    /* margin-right: 10px; instead of this you can use gap property in nav-menu to seprate its children*/
+    
+    font-size: 20px;
+    font-weight: 500;
+    
+
+    /* flex column so that the red horizontal line comes below it */
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.nav-menu hr{
+    width: 80%;
+    height: 3px;
+    border: none;
+    border-radius: 10px;
+    background: red;
+
+}
+
+
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.nav-login-cart button{
+    height: 58px;
+    width: 157px;
+    border: 1px solid #7a7a7a;
+    border-radius: 75px;
+    background:white;
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+
+}
+.nav-login-cart button:active{
+    background: #f3f3f3;
+
+}
+.nav-cart-count{
+    height: 22px;
+    width: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    margin-top: -35px;
+    margin-left: -35px;
+    border-radius: 11px;
+    font-size: 14px;
+    color: white;
+}
+
+/* -we use css media queries for making our site responsive.
+*) we'll target 4 screen resolutions or widths: 1280px, 1024px,800px and 500px(mobile devices). */
+
+.nav-dropdown{
+    /* initially we keep the dropdown icon hidden */
+    display: none;
+}
+/* THESE CHANGES WILL BE APPLIED WITH THE HELP OF MEDIA QUERIES WHEN THE SCREEN WIDTH REACHES 1280PX OR BELOW.*/
+@media(max-width:1280px){
+    /* first we reduce the top-bottom, left-right paddong of navbar component. */
+    .navbar{
+        padding: 12px 50px;
+    }
+    /* reducing navbar shopper logo image size */
+    .nav-logo img{
+        width: 40px;
+    }
+    /* reducing font size of shopper text in navbar */
+    .nav-logo p{
+        font-size: 25px;
+    }
+    /* reducing gap between cart icon and button */
+    .nav-login-cart{
+        gap: 30px;
+    }
+    /* reducing login button size and font. */
+    .nav-login-cart button{
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+    }
+    /* moving cart icon towardas right coener and reducing its font */
+    .nav-cart-count{
+        margin-left: -40px;
+        font-size: 12px;
+    }
+}
+
+
+/* THESE CHANGES WILL BE APPLIED WITH THE HELP OF MEDIA QUERIES WHEN THE SCREEN WIDTH REACHES 1024PX OR BELOW.*/
+@media(max-width:1024px){
+    /* first we reduce the top-bottom, left-right paddong of navbar component. */
+    .navbar{
+        padding: 12px 30px;
+    }
+    /* reducing gap between navbar menu items and thier fony size as well. */
+    .nav-menu{
+        gap: 25px;
+        font-size: 14px;
+
+    }
+    /* reducing cart logo icon size */
+    .nav-login-cart img{
+        width: 30px;
+    }
+    /* reducing login button size and font. */
+    .nav-login-cart button{
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+    /* reducing cart icon circular count element div size  */
+    .nav-cart-count{
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+/* THESE CHANGES WILL BE APPLIED WITH THE HELP OF MEDIA QUERIES WHEN THE SCREEN WIDTH REACHES 800PX OR BELOW.*/
+@media(max-width:800px){
+    /* first we reduce the top-bottom, left-right paddong of navbar component. */
+    .navbar{
+        padding: 10px 0px;
+    }
+
+    .nav-dropdown{
+        display: block;
+        width: 30px;
+        rotate: -90deg;
+        /* as we below apply the transition the above transformation of rotate will last for 0.5 sec */
+        transition: 0.5s;
+    }
+
+    /* below styles(both of the below styles) just moves the nav list items to below the dropdown icon but they are not displayed because of (display: none) but once user clicks on dropdown icon the class (.nav-menu-visible) will be added to it and it will have property(display:flex) and become visible. */
+    .nav-menu{
+        display: none;
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        background-color: white;
+        justify-content: center;
+        top: 70px;
+    }
+    .nav-menu-visible{
+        display: flex;
+    }
+
+    /* the below style  will just rotate the dropdown icon by 90deg. */
+    .nav-dropdown-open{
+        transform: rotate(90deg);
+    }
+    
+}
+/* THESE CHANGES WILL BE APPLIED WITH THE HELP OF MEDIA QUERIES WHEN THE SCREEN WIDTH REACHES 500PX OR BELOW THAT IS FOR MOBILE PHONE SIZE DEVICES.*/
+@media(max-width:500px){
+    /* first we reduce the top-bottom, left-right paddong of navbar component. */
+    .navbar{
+        padding: 8px 0px;
+        gap: 0;
+    }
+    .nav-logo{
+        /* nav logo will shrink to 0.8 times its size */
+        transform: scale(0.8);
+    }
+    .nav-menu{
+        height: 70px;
+        top: 60px;
+    }
+    .nav-login-cart{
+        /* it will shrink to 0.8 times its size */
+        transform: scale(0.8);
+    }
+
+    
+}

@@ -1,0 +1,92 @@
+.item{
+    width: 280px;
+}
+.item img{
+    width: 280px;
+}
+.item p{
+    margin: 6px 0px;
+}
+.item-prices{
+    display: flex;
+    gap: 20px;
+}
+.item-price-new{
+    color: #374151;
+    font-size: 18px;
+    font-weight: 600;
+}
+.item-price-new{
+    color: #8c8c8c;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: line-through;
+}
+.item:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}
+
+
+/* -we use css media queries for making our site responsive.
+*) we'll target 4 screen resolutions or widths: 1280px, 1024px,800px and 500px(mobile devices). */
+
+/* THESE CHANGES WILL BE APPLIED WITH THE HELP OF MEDIA QUERIES WHEN THE SCREEN WIDTH REACHES 1280PX OR BELOW.*/
+@media(max-width:1280px){
+
+    /* reducing width of item or product card */
+    .item{
+        width: 220px;
+        font-size: 14px;
+    }
+    .item img{
+        width: 220px;
+    }
+    .item-price-new{
+        font-size: 14px;
+    }
+}
+
+/* THESE CHANGES WILL BE APPLIED WITH THE HELP OF MEDIA QUERIES WHEN THE SCREEN WIDTH REACHES 1024PX OR BELOW.*/
+@media(max-width:1024px){
+
+    /* reducing width of item or product card */
+    .item{
+        width: 170px;
+        font-size: 13px;
+    }
+    .item img{
+        width: 170px;
+    }
+    .item-price-new{
+        font-size: 13px;
+    }
+}
+
+/* THESE CHANGES WILL BE APPLIED WITH THE HELP OF MEDIA QUERIES WHEN THE SCREEN WIDTH REACHES 800PX OR BELOW.*/
+@media(max-width:800px){
+
+    /* reducing width of item or product card */
+    .item{
+        width: 120px;
+        font-size: 12px;
+    }
+    .item img{
+        width: 120px;
+    }
+    .item-price-new{
+        font-size: 12px;
+    }
+}
+
+/* THESE CHANGES WILL BE APPLIED WITH THE HELP OF MEDIA QUERIES WHEN THE SCREEN WIDTH REACHES 500PX OR BELOW.*/
+@media(max-width:500px){
+
+    /* reducing width of item or product card */
+    .item{
+        width: 160px;
+    }
+    .item img{
+        width: 160px;
+    }
+}
